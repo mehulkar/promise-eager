@@ -7,25 +7,26 @@ will resolve.
 ```js
 const { eagerResolution } = require('@apple/promise-eager');
 
-const promises = [
-  anAsync("1", 1000),
-  anAsync("2", 500),
-  anAsync("3", 2000)
-];
-
-eagerResolution(promises).then(handleData);
-
-function anAsync(val, timeout = 0) {
+// helper to create promises that resolve in some time.
+function createPromise(val, timeout = 0) {
   return new Promise(resolve => {
     setTimeout(() => resolve(val), timeout);
   });
 }
 
-function handleData(data) {
+const promises = [
+  createPromise("1", 1000),
+  createPromise("2", 500),
+  createPromise("3", 2000)
+];
+
+eagerResolution(promises).then(handleResolution);
+
+function handleResolution(data) {
   console.log(data.val);
 
   if (data.next) {
-    data.next.then(newData => handleData(newData));
+    data.next.then(newData => handleResolution(newData));
   } else {
     console.log("done");
   }
