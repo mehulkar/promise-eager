@@ -1,6 +1,6 @@
 {
   "name": "@apple/promise-eager",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Eager promises",
   "main": "index.js",
   "scripts": {
