@@ -1,0 +1,15 @@
+{
+  "name": "@apple/promise-eager",
+  "version": "1.0.0",
+  "description": "Eager promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "promise",
+    "async"
+  ],
+  "author": "Mehul Kar <mehulkar@apple.com>",
+  "license": "ISC"
+}
