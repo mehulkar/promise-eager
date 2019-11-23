@@ -10,6 +10,9 @@
     "promise",
     "async"
   ],
+  "publishConfig": {
+    "registry": "https://npm.apple.com"
+  },
   "author": "Mehul Kar <mehulkar@apple.com>",
   "license": "ISC"
 }
